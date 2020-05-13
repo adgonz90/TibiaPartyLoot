@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Party loot splitter</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="main.css">
+  <script>document.documentElement.className+=' js'</script>
+ </head>
+ <body>
+  <main>
+   <h1>Party loot splitter</h1>
+   <p>Need to share loot with your party members? Simply copy the output from the in-game “party hunt analyser” and paste it into the field below. The tool then tells you how to settle the balance.</p>
+   <img src="party-loot.jpg" alt="The in-game party hunt analyser lets you copy its output.">
+   <div id="party-loot-wrapper">
+    <section>
+     <h2>Input from Tibia’s party hunt analyser</h2>
+     <textarea id="party-loot-input"></textarea>
+    </section>
+    <section>
+     <h2>Output</h2>
+     <div id="party-loot-output"></div>
+    </section>
+   </div>
+  </main>
+  <script src="party-loot.js"></script>
+ 
+
+</body></html>
