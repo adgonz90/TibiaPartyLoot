@@ -57,9 +57,9 @@ var party;
         for (const person of party.people) {
             personHtmlRows += `
               <tr ${person.split < 0 ? 'class="table-danger"' : ''}>
-                <td><input type="text" class="form-control-plaintext" name="person[${index}][name]" value="${person.name}"></td>
+                <td><input type="text" class="form-control-plaintext" name="person[${index}][name]" value="${person.name}" disabled></td>
                 <td><div class="input-group">
-                  <input type="text" class="form-control-plaintext" name="person[${index}][loot]" value="${person.loot}">
+                  <input type="text" class="form-control-plaintext" name="person[${index}][loot]" value="${person.loot}" disabled>
                   <div class="input-group-append">
                     <div class="input-group-text">
                       Keep?&nbsp
@@ -67,9 +67,9 @@ var party;
                     </div>
                   </div>
                 </div></td>
-                <td><input type="text" class="form-control-plaintext" name="person[${index}][loot]" value="${person.supplies}"></td>
+                <td><input type="text" class="form-control-plaintext" name="person[${index}][supplies]" value="${person.supplies}" disabled></td>
                 <td><div class="input-group">
-                  <input type="text" class="form-control-plaintext" name="person[${index}][split]" value="${person.split}">
+                  <input type="text" class="form-control-plaintext" name="person[${index}][split]" value="${person.split}" disabled>
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button" data-copy="transfer ${person.split} to ${person.name}" ${person.split < 0 ? 'disabled' : ''}>Copy</button>
                   </div>
