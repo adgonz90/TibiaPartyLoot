@@ -43,9 +43,11 @@ var party;
 
     const analyzeParty = () => {
         party.perPersonProfit = Math.floor(party.balance / party.size);
+        party.splits = [];
 
         for (const person of party.people) {
             person.split = party.perPersonProfit + person.supplies - (person.kept_loot ? person.loot : 0);
+            party.splits.push(person.name + ': ' + person.split);
         }
 
         return party;
@@ -93,7 +95,7 @@ var party;
                   <th>Member</th>
                   <th>Loot</th>
                   <th>Supplies</th>
-                  <th>Split</th>
+                  <th><span class="float-left">Split</span><span class="float-right"><button class="btn btn-outline-dark" type="button" data-copy="${party.splits.join(" \\ ")}">Copy</button></span></th>
                 </tr>
                 </thead>
                 <tbody>
