@@ -1,29 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Party loot splitter</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="main.css">
-  <script>document.documentElement.className+=' js'</script>
- </head>
- <body>
-  <main>
-   <h1>Party loot splitter</h1>
-   <p>Need to share loot with your party members? Simply copy the output from the in-game “party hunt analyser” and paste it into the field below. The tool then tells you how to settle the balance.</p>
-   <img src="party-loot.jpg" alt="The in-game party hunt analyser lets you copy its output.">
-   <div id="party-loot-wrapper">
-    <section>
-     <h2>Input from Tibia’s party hunt analyser</h2>
-     <textarea id="party-loot-input"></textarea>
-    </section>
-    <section>
-     <h2>Output</h2>
-     <div id="party-loot-output"></div>
-    </section>
-   </div>
-  </main>
-  <script src="party-loot.js"></script>
- 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>Tibia Party Hunt</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Tibia Party Loot</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#controlBar" aria-controls="controlBar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
 
-</body></html>
+  <main role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Tibia Party Loot</h1>
+        <div class="row">
+          <div class="col-md-7">
+            <p>Need to share loot with your party members? Simply copy the output from the in-game “party hunt analyser” and paste it into the field below. The tool will then show you each members loot, supplies, and owed split.</p>
+            <ul>
+              <li>Check the Keep? box if that member is keeping the loot they picked up.</li>
+              <li>If a member has more loot than their split, their row will be highlighted red.</li>
+              <li>Hit the Copy button to get the bank NPC transfer message, except on negative split. Copy button will momentarily turn green when successful.</li>
+          </div>
+          <div class="col-md-4">
+            <img src="party-loot.jpg" alt="The in-game party hunt analyser lets you copy its output.">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Party Analyzer</h2>
+          <textarea class="form-control" id="party-hunt-analyzer" style="height: 500px;" placeholder="Paste the Party Hunt analyser content here"></textarea>
+        </div>
+        <div class="col">
+          <h2>Results</h2>
+          <div id="party-results">
+          </div>
+        </div>
+      </div>
+    </div> <!-- /container -->
+  </main>
+  <hr>
+  <footer class="container">
+    <p>&copy; <a href="https://www.tibia.com/community/?subtopic=characters&name=Shinigami+Hunter">Shinigami Hunter</a> 2020</p>
+  </footer>
+  <textarea id="hidden-copy" style="width: 0;height: 0;opacity: 0; position: fixed; top: 0; left: 0" readonly></textarea>
+  <script src="party-loot.js"></script>
+</body>
+</html>
